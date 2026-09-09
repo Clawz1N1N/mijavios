@@ -1,4 +1,4 @@
-//
+﻿//
 //  AiCrashAnalyzer.m
 //  Amethyst
 //
@@ -31,16 +31,28 @@
 - (NSArray<NSDictionary *> *)ruleTable {
     return @[
         @{
+            @"category": @"内存不足-Native渲染内存",
+            @"alternatives": @[
+                @[@"OutOfMemoryError", @"nmemAllocChecked"],
+                @[@"OutOfMemoryError", @"Rendering section"],
+            ],
+                        @"explanation": @"Java 堆（-Xmx）尚未耗尽，是渲染用的本地内存（malloc/direct buffer）耗尽：OptiFine VboRegion 渐进扩张直至触碰 Jetsam 总上限，malloc 返回 NULL。Render Distance 越大，VboRegion 越大。",
+            @"suggestions": @[
+                @"把渲染距离（Render Distance）调小——这是最直接有效的办法。",
+                @"在启动器设置里调大内存分配（3GB 设备建议 1000–1200MB），让 Jetsam 上限一起抬高。",
+                @"关闭或更换光影包；长时间游玩（5-20 分钟渐进累积）后重启游戏清理碎片。",
+            ],
+        },
+        @{
             @"category": @"内存不足",
             @"alternatives": @[
                 @[@"OutOfMemoryError"],
             ],
             @"explanation": @"这就像你每个月的工资就那么多，却要同时付房租、水电和零食钱，最后余额见底了。"
-                            "游戏的内存（可用空间）不够用，Java 想再申请内存时被系统拒绝，于是崩溃。",
+            "游戏的内存（可用空间）不够用，Java 想再申请内存时被系统拒绝，于是崩溃。",
             @"suggestions": @[
                 @"在启动器设置中调大游戏分配内存（Java 参数里的 -Xmx，让「工资」多起来）。",
                 @"关闭或减少已安装的模组、光影包，减轻「房租压力」。",
-                @"若修改内存也不行，尝试降低渲染距离、关闭光影。",
             ],
         },
         @{
