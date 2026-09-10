@@ -1,4 +1,4 @@
-#import <Foundation/Foundation.h>
+﻿#import <Foundation/Foundation.h>
 
 #import "DBNumberedSlider.h"
 #import "HostManagerBridge.h"
@@ -267,9 +267,9 @@
         if ([section isEqualToString:@"ai"]) {
             if ([key isEqualToString:@"safety_mode"]) {
                 switch ([[AiSettings sharedSettings] safetyMode]) {
-                    case AiSafetyModeSafe:  return @"只读自动执行（Safe）";
-                    case AiSafetyModeAsk:   return @"写操作逐次确认（Ask）";
-                    case AiSafetyModeYOLO:  return @"自动批准（YOLO）";
+                    case AiSafetyModeSafe:  return localize(@"ai.pref.safety.readonly", nil);
+                    case AiSafetyModeAsk:   return localize(@"ai.pref.safety.ask", nil);
+                    case AiSafetyModeYOLO:  return localize(@"ai.pref.safety.yolo", nil);
                 }
             }
             if ([key isEqualToString:@"markdown_enabled"]) {
@@ -289,9 +289,9 @@
                     mode = (AiSafetyMode)[value integerValue];
                 } else if ([value isKindOfClass:[NSString class]]) {
                     NSString *s = value;
-                    if ([s containsString:@"逐次确认"]) {
+                    if ([s containsString:localize(@"ai.pref.confirm_each", nil)]) {
                         mode = AiSafetyModeAsk;
-                    } else if ([s containsString:@"自动批准"]) {
+                    } else if ([s containsString:localize(@"ai.pref.auto_approve", nil)]) {
                         mode = AiSafetyModeYOLO;
                     }
                 }
@@ -1159,7 +1159,7 @@
             // AI 助手 settings（Air AI Agent Phase 2）
             @{@"icon": @"sparkles"},
             @{@"key": @"provider_config",
-              @"title": @"提供商配置",
+              @"title": localize(@"ai.pref.provider_config", nil),
               @"icon": @"globe.asia.australia.fill",
               @"type": self.typeButton,
               @"action": ^void(){
@@ -1170,7 +1170,7 @@
               }
             },
             @{@"key": @"session_list",
-              @"title": @"会话列表",
+              @"title": localize(@"ai.pref.session_list", nil),
               @"icon": @"rectangle.stack.badge.person.crop",
               @"type": self.typeButton,
               @"action": ^void(){
@@ -1181,27 +1181,27 @@
               }
             },
             @{@"key": @"safety_mode",
-              @"title": @"默认安全模式",
+              @"title": localize(@"ai.pref.default_safety", nil),
               @"icon": @"hand.raised.fill",
               @"type": self.typePickField,
               @"pickKeys": @[
-                  @"只读自动执行（Safe）",
-                  @"写操作逐次确认（Ask）",
-                  @"自动批准（YOLO）"
+                  @localize(@"ai.pref.safety.readonly", nil),
+                  @localize(@"ai.pref.safety.ask", nil),
+                  @localize(@"ai.pref.safety.yolo", nil)
               ],
               @"pickList": @[
-                  @"只读自动执行（Safe）",
-                  @"写操作逐次确认（Ask）",
-                  @"自动批准（YOLO）"
+                  @localize(@"ai.pref.safety.readonly", nil),
+                  @localize(@"ai.pref.safety.ask", nil),
+                  @localize(@"ai.pref.safety.yolo", nil)
               ]
             },
             @{@"key": @"markdown_enabled",
-              @"title": @"Markdown 渲染",
+              @"title": localize(@"ai.pref.markdown_render", nil),
               @"icon": @"textformat",
               @"type": self.typeSwitch
             },
             @{@"key": @"system_prompt",
-              @"title": @"系统提示词",
+              @"title": localize(@"ai.pref.system_prompt", nil),
               @"icon": @"text.book.closed.fill",
               @"type": self.typeButton,
               @"action": ^void(){

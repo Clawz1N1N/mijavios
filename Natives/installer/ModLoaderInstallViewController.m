@@ -1,4 +1,4 @@
-#import "utils.h"
+﻿#import "utils.h"
 //
 //  ModLoaderInstallViewController.m
 //  Amethyst
@@ -14,6 +14,7 @@
 
 #import "ModLoaderInstallViewController.h"
 #import "NeoForgeVersionFetcher.h"
+#import "PLMirrorCenter.h"
 #import "LauncherPreferences.h"
 #import "BackgroundManager.h"
 #import "ModLoaderIconHelper.h"
@@ -491,45 +492,64 @@
 #pragma mark Fabric / Quilt
 
 - (void)loadFabricLikeVersions:(NSString *)loaderType {
+    //修复：单一官方源在部分网络下加载失败——改用 PLMirrorCenter 候选（官方+BMCLAPI 镜像），顺序尝试
     NSString *metaBase = [loaderType isEqualToString:@"quilt"]
         ? @"https://meta.quiltmc.org/v3/versions/loader"
         : @"https://meta.fabricmc.net/v2/versions/loader";
     NSString *urlString = [NSString stringWithFormat:@"%@/%@", metaBase, _gameVersion];
-    NSURL *url = [NSURL URLWithString:urlString];
+    NSURL *origURL = [NSURL URLWithString:urlString];
+    NSArray<NSURL *> *candidates = [PLMirrorCenter candidateURLsForOriginalURL:origURL resourceType:PLMirrorResourceTypeModLoader];
+    if (candidates.count == 0) candidates = @[origURL];
 
-    __weak typeof(self) weakSelf = self;
-    _currentTask = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            __strong typeof(weakSelf) strongSelf = weakSelf;
+    __weaktypeof(self)weakSelf = self;
+    __block NSError *lastError = nil;
+    __block NSMutableData *accum = nil;
+    //顺序尝试每个候选源，任一成功即完成；全部失败才报错
+    __block void (^tryNext)(NSUInteger) = nil;
+    tryNext = ^(NSUInteger idx) {
+        if (idx >= candidates.count) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                __strongtypeof(weakSelf)strongSelf = weakSelf;
+                if (!strongSelf) return;
+                [strongSelf finishLoadingWithVersions:@[] error:lastError ?: [NSError errorWithDomain:@"ModLoaderInstall" code:-1 userInfo:@{NSLocalizedDescriptionKey:@"all sources failed"}]];
+            });
+            return;
+        }
+        NSURL *candidate = candidates[idx];
+        NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:candidate];
+        req.timeoutInterval = 15.0;
+        [req setValue:@"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15" forHTTPHeaderField:@"User-Agent"];
+        NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:req completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+            __strongtypeof(weakSelf)strongSelf = weakSelf;
             if (!strongSelf) return;
-            if (error && error.code != NSURLErrorCancelled) {
-                [strongSelf finishLoadingWithVersions:@[] error:error];
+            if (error || !data) {
+                if (error && error.code == NSURLErrorCancelled) return;
+                lastError = error ?: lastError;
+                tryNext(idx + 1);
                 return;
             }
-            if (!data || error) {
-                [strongSelf finishLoadingWithVersions:@[] error:nil];
-                return;
-            }
-            NSError *jsonError;
+            NSError *jsonError = nil;
             NSArray *versions = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
-            if (!versions || jsonError) {
-                [strongSelf finishLoadingWithVersions:@[] error:jsonError];
+            if (!versions || jsonError || ![versions isKindOfClass:[NSArray class]] || versions.count == 0) {
+                lastError = jsonError ?: lastError;
+                tryNext(idx + 1);
                 return;
             }
             NSMutableArray *list = [NSMutableArray array];
             for (NSDictionary *ver in versions) {
                 if (![ver isKindOfClass:[NSDictionary class]]) continue;
                 NSString *loaderVersion = ver[@"loader"][@"version"];
-                if (loaderVersion && ![list containsObject:loaderVersion]) {
-                    [list addObject:loaderVersion];
-                }
+                if (loaderVersion && ![list containsObject:loaderVersion]) [list addObject:loaderVersion];
             }
-            [strongSelf finishLoadingWithVersions:list error:nil];
-        });
-    }];
-    [_currentTask resume];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [strongSelf finishLoadingWithVersions:list error:nil];
+            });
+        }];
+        if (idx == 0) { __strongtypeof(weakSelf)strongSelf0 = weakSelf; if (strongSelf0) strongSelf0->_currentTask = task; }
+        [task resume];
+    };
+    tryNext(0);
 }
-
 #pragma mark Forge (并发竞速，参照原 loadForgeVersionsReal)
 
 - (void)loadForgeVersions {

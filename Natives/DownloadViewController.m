@@ -1,4 +1,4 @@
-#import "DownloadViewController.h"
+﻿#import "DownloadViewController.h"
 #import "BackgroundManager.h"
 // IconLoader：统一的项目图标加载器（双层缓存 + 降采样 + 并发控制 + CDN 镜像），
 // 替代 UIImageView+AFNetworking（仅内存缓存，无降采样，无镜像）
@@ -1293,7 +1293,7 @@ typedef NS_ENUM(NSInteger, ModernAssetType) {
 
     // ===== 2. 游戏版本选择按钮 =====
     self.sidebarVersionButton = [self createSidebarSelectButtonWithTitle:localize(@"i18n_str_2031", nil)
-                                                                    value:@"全部版本"
+                                                                    value:localize(@"i18n_str_2032", nil)
                                                                   selector:@selector(sidebarVersionButtonClicked:)];
     [self.filterSidebarContainer addSubview:self.sidebarVersionButton];
     self.sidebarVersionTitleLabel = [self findSubviewInButton:self.sidebarVersionButton withTag:100];
@@ -1307,7 +1307,7 @@ typedef NS_ENUM(NSInteger, ModernAssetType) {
 
     // ===== 3. 模组加载器选择按钮 =====
     self.sidebarLoaderButton = [self createSidebarSelectButtonWithTitle:localize(@"i18n_str_160", nil)
-                                                                   value:@"全部"
+                                                                   value:localize(@"i18n_str_2032", nil)
                                                                  selector:@selector(sidebarLoaderButtonClicked:)];
     [self.filterSidebarContainer addSubview:self.sidebarLoaderButton];
     self.sidebarLoaderTitleLabel = [self findSubviewInButton:self.sidebarLoaderButton withTag:100];
@@ -2496,7 +2496,7 @@ typedef NS_ENUM(NSInteger, ModernAssetType) {
         [alert addAction:[UIAlertAction actionWithTitle:version
                                                   style:UIAlertActionStyleDefault
                                                 handler:^(UIAlertAction * _Nonnull action) {
-            if ([version isEqualToString:@"全部版本"]) {
+            if ([version isEqualToString:localize(@"i18n_str_2032", nil)]) {
                 self.currentGameVersion = nil;
             } else {
                 self.currentGameVersion = version;

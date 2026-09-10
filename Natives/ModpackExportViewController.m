@@ -1,4 +1,4 @@
-#import "utils.h"
+﻿#import "utils.h"
 //
 //  ModpackExportViewController.m
 //  Amethyst
@@ -504,7 +504,7 @@
                                                                                   error:&error];
 
         dispatch_async(dispatch_get_main_queue(), ^{
-            BOOL wasCancelled = [[error.userInfo objectForKey:NSLocalizedDescriptionKey] containsString:@"取消"];
+            BOOL wasCancelled = [[error.userInfo objectForKey:NSLocalizedDescriptionKey] containsString:localize(@"i18n_str_469", nil)];
             [self hideProgressCard];
             if (success) {
                 [self showExportSuccessWithPath:destPath];

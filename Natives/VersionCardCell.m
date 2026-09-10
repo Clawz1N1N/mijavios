@@ -1,4 +1,4 @@
-#import "utils.h"
+﻿#import "utils.h"
 // VersionCardCell.m
 // 参照 FCL (item_remote_version.xml) 与 ZL2 (VersionItemLayout) 的单列横向列表行设计：
 // - 左侧：类型图标容器（40x40 圆角方块，类型色背景 + 白色 SF Symbol）
@@ -256,11 +256,11 @@
     UIColor *typeColor = [UIColor systemGreenColor];
     NSString *typeText = localize(@"i18n_str_2058", nil);
 
-    if ([type isEqualToString:@"正式版"] || [type isEqualToString:@"release"]) {
+    if ([type isEqualToString:localize(@"i18n_str_2058", nil)] || [type isEqualToString:@"release"]) {
         iconName = @"cube.fill";
         typeColor = [UIColor systemGreenColor];
         typeText = localize(@"i18n_str_2058", nil);
-    } else if ([type isEqualToString:@"测试版"] || [type isEqualToString:@"snapshot"]) {
+    } else if ([type isEqualToString:localize(@"i18n_str_2059", nil)] || [type isEqualToString:@"snapshot"]) {
         iconName = @"hammer.fill";
         typeColor = [UIColor systemOrangeColor];
         typeText = localize(@"i18n_str_2059", nil);

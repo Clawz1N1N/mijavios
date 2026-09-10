@@ -1,4 +1,4 @@
-//
+﻿//
 // Created by BZLZHH on 2025/1/28.
 //
 
@@ -750,6 +750,10 @@ void* glMapBufferRange(GLenum target, GLintptr offset, GLsizeiptr length, GLbitf
     LOG()
     if (global_settings.buffer_coherent_as_flush) access &= ~GL_MAP_FLUSH_EXPLICIT_BIT;
     //    access |= GL_MAP_UNSYNCHRONIZED_BIT;
+    // Fix (empty world): ES3.0/3.1 core rejects GL_MAP_PERSISTENT_BIT and GL_MAP_COHERENT_BIT
+    // (INVALID_VALUE -> NULL pointer -> game aborts buffer building). Plain mapping still
+    // uploads correctly (implicit sync), matching the glBufferData fallback above.
+    access &= ~(GL_MAP_PERSISTENT_BIT | GL_MAP_COHERENT_BIT);
     return GLES.glMapBufferRange(target, offset, length, access);
 }
 
@@ -770,6 +774,15 @@ void glBufferStorage(GLenum target, GLsizeiptr size, const void* data, GLbitfiel
             (flags & GL_DYNAMIC_STORAGE_BIT) != 0))
             flags |= (GL_MAP_WRITE_BIT | GL_MAP_COHERENT_BIT | GL_MAP_PERSISTENT_BIT);
         GLES.glBufferStorageEXT(target, size, data, flags);
+    } else {
+        // Fix (empty world, vanilla 1.17+): without EXT_buffer_storage, glBufferStorage
+        // was a silent NO-OP - MC chunk vertex/index buffers never got allocated, so only
+        // 2D/texture layers rendered (world geometry missing). Fall back to glBufferData.
+        // Persistent mappings are not real, but MC maps via glMapBufferRange which still works
+        // (orphaned each upload). This matches gl4es behavior for the same case.
+        GLenum usage = (flags & GL_MAP_READ_BIT) ? ((flags & GL_MAP_WRITE_BIT) ? GL_DYNAMIC_DRAW : GL_STATIC_DRAW) : GL_STATIC_DRAW;
+        if ((flags & GL_MAP_PERSISTENT_BIT) != 0 || (flags & GL_DYNAMIC_STORAGE_BIT) != 0) usage = GL_DYNAMIC_DRAW;
+        GLES.glBufferData(target, size, data, usage);
     }
     CHECK_GL_ERROR
 }

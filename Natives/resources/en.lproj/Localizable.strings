@@ -715,7 +715,7 @@
 
 // 内存限制帮助弹窗
 "mem_help.title" = "About Memory Limit";
-"mem_help.message" = "iOS 18 / iOS 26 single-instance memory limit is about 1440MB. Large modpacks may crash due to insufficient memory.\n\nSolution:\nUse GetMoreRam (a LiveContainer plugin) to lift the memory limit.\nGetMoreRam repo: github.com/hugeBlack/GetMoreRam\n\nRestart the launcher after installation to take effect.\n\nIf you don't use LiveContainer, try lowering the memory allocation (Settings > Java > Memory Allocation), but some modpacks may not run under the memory limit.";
+"mem_help.message" = "iOS 18 / iOS 26 caps a single instance at roughly 1440 MB of memory; large modpacks may crash when memory runs out.\n\nSolution:\nUse GetMoreRam (a LiveContainer plugin) to lift the memory limit.\nGetMoreRam repository: github.com/hugeBlack/GetMoreRam\n\nRestart the launcher after installing for it to take effect.\n\nIf you do not use LiveContainer, try lowering the memory allocation (Settings - Java - Memory Allocation), but some modpacks may still fail to run under the memory limit.";
 
 // 下载进度与速率（Phase 6 Task 6.1）
 "download.speed.format" = "%@/s";
@@ -1842,10 +1842,9 @@
 "i18n_str_616" = "Timed out waiting for the ZeroTier node to come online (%.0fs)";
 "i18n_str_629" = "Timed out waiting for the ZeroTier network to be ready (%.0fs). Please confirm the Network ID is correct and that your node has been authorized on the central.zerotier.com dashboard.";
 "i18n_str_632" = "Failed to start the SOCKS5 proxy";
-"i18n_str_637" = "1. Enter the ZeroTier Network ID above on the launcher's online play page\n";
-"i18n_str_638" = "2. Tap \"Join Room\"; the launcher will automatically start the online core and connect
-";
-"i18n_str_639" = "3. After connecting, launch the game and add the server in MC: %@";
+"i18n_str_637" = "1. Enter the ZeroTier Network ID on the launcher's online play page\n";
+"i18n_str_638" = "2. Tap \"Join Room\" - the launcher will automatically start the online core and connect\n";
+"i18n_str_639" = "3. After connecting, launch the game and add server MC: %@";
 "i18n_str_832" = "SHA1 checksum failed: expected %@, got %@ (%@)";
 "i18n_str_883" = "Automatically join this server after launching the game (refer to FCL)\nFormat: host or host:port ([host]:port for IPv6); leave empty to not auto-join";
 "i18n_str_952" = "SOCKS5 proxy is already running";
@@ -1954,3 +1953,192 @@
 
 "preference.auto" = "Auto";
 "preference.auto_select" = "Auto";
+
+// Multiplayer - Common
+"mp.close" = "Close";
+"common.cancel" = "Cancel";
+"common.save" = "Save";
+"common.ok" = "OK";
+
+// Multiplayer - Core Status
+"mp.core.unavailable_title" = "Multiplayer Core Unavailable";
+"mp.core.unavailable_msg" = "ZeroTier core not loaded; cannot enable multiplayer. Use a build with real zt.framework.";
+"mp.node.start_failed_title" = "Start Failed";
+"mp.node.start_failed_msg" = "ZeroTier node start failed, please retry.";
+
+// Multiplayer - Network ID
+"mp.network_id.title" = "Set Network ID";
+"mp.network_id.message" = "Enter the 16-digit Network ID created at central.zerotier.com; used automatically when hosting.";
+"mp.network_id.placeholder" = "16-digit hex Network ID";
+"mp.network_id.use_adhoc" = "Use Fast Mode (No Registration)";
+"mp.network_id.adhoc_failed_title" = "Generation Failed";
+"mp.network_id.adhoc_failed_msg" = "Cannot generate fast-mode Network ID; use standard mode instead.";
+"mp.network_id.adhoc_success_title" = "Fast Mode Enabled";
+"mp.network_id.adhoc_success_msg" = "Network ID auto-generated, no account needed. Note: fast mode is less stable, IP may change.";
+"mp.network_id.invalid_title" = "Invalid Format";
+"mp.network_id.invalid_msg" = "Network ID should be a 16-digit hex string.";
+
+// Multiplayer - Guide
+"mp.guide.mode_standard" = "Standard Mode";
+"mp.guide.stable" = "Stable";
+"mp.guide.mode_standard_desc" = "Register at central.zerotier.com, create an organization, and get a fixed Network ID. Stable IP, auth management, per-user network.";
+"mp.guide.mode_fast" = "Fast Mode";
+"mp.guide.unstable" = "Unstable";
+"mp.guide.mode_fast_desc" = "Auto-generate Network ID via Ad-hoc, no account needed. IPv6 only, weaker security, IP may change.";
+"mp.guide.step1_title" = "Register ZeroTier Account";
+"mp.guide.step1_desc" = "Visit central.zerotier.com, register and log in (free, supports Google/GitHub/Microsoft login).";
+"mp.guide.step2_title" = "Create Organization";
+"mp.guide.step2_desc" = "After login, enter org name and click Create Organization. Free tier includes one Network Group and one Network.";
+"mp.guide.step3_title" = "Get Network ID";
+"mp.guide.step3_desc" = "Expand Networks in the sidebar, click the default network, and copy the 16-digit Network ID at the top.";
+"mp.guide.step4_title" = "Set Network Access Control";
+"mp.guide.step4_desc" = "Private (recommended): manual member auth required; Public: anyone can join directly.";
+"mp.guide.step5_title" = "Enter in Launcher";
+"mp.guide.step5_desc" = "Return here, tap the Preset Network ID row, paste and save.";
+"mp.guide.step6_title" = "Authorize Guest Device";
+"mp.guide.step6_desc" = "After guest joins, go to Member Devices tab, tap three-dot menu, then Authorize (required for Private mode).";
+"mp.guide.step7_title" = "Start Multiplayer";
+"mp.guide.step7_desc" = "Launch the game, open the multiplayer overlay, and select Host to create a room.";
+"mp.guide.fast_step1_title" = "Tap Preset Network ID";
+"mp.guide.fast_step1_desc" = "Tap the Preset Network ID row on this page.";
+"mp.guide.fast_step2_title" = "Select Fast Mode";
+"mp.guide.fast_step2_desc" = "Tap the Use Fast Mode button; the system auto-generates a Network ID.";
+"mp.guide.fast_step3_title" = "Start Multiplayer";
+"mp.guide.fast_step3_desc" = "Launch the game, open the multiplayer overlay, and select Host to create a room.";
+"mp.guide.intro" = "ZeroTier offers two modes, choose as needed:";
+"mp.guide.note" = "Note: host and guest must use the same Network ID. Standard mode requires backend auth (Private) or Public. Fast mode shares one public network.";
+"mp.guide.title" = "ZeroTier Multiplayer Tutorial";
+"mp.guide.open_website" = "Open central.zerotier.com (Standard Mode)";
+"mp.guide.use_fast_mode" = "Use Fast Mode";
+
+// Multiplayer - Connection
+"mp.connect.failed" = "Connection Failed";
+"mp.connect.failed_msg" = "Cannot connect to room; check Network ID and network connection.";
+"mp.connect.port_forward_failed_msg" = "Port forwarder start failed; cannot connect to host. Try disconnecting and reconnecting.";
+
+// Multiplayer - Room Actions
+"mp.room.unnamed" = "Unnamed Room";
+"mp.room.network_id" = "Network ID";
+"mp.room.action.disconnect" = "Disconnect";
+"mp.room.action.connect" = "Connect to Room";
+"mp.room.action.share" = "Share Room";
+"mp.room.action.delete" = "Delete Room";
+"mp.room.delete.confirm_title" = "Confirm Delete";
+"mp.room.delete.confirm_prefix" = "Are you sure you want to delete room";
+"mp.room.delete.confirm_warning" = "This action cannot be undone.";
+"mp.room.delete.button" = "Delete";
+"mp.room.server_address" = "Server Address";
+"mp.room.status.disconnected" = "Disconnected";
+"mp.room.status.connecting" = "Connecting";
+"mp.room.status.connected" = "Connected";
+"mp.room.status.error" = "Error";
+"mp.room.button.disconnect" = "Disconnect";
+"mp.room.button.connecting" = "Connecting";
+"mp.room.button.connect" = "Connect";
+
+// Multiplayer - Direct Connect
+"mp.direct.error_title" = "Notice";
+"mp.direct.error.ip_empty" = "Please enter the server IP address.";
+"mp.direct.error.ip_invalid" = "IP address format incorrect, please check input.";
+"mp.direct.error.no_profile" = "No profile found; select a game profile first.";
+"mp.direct.success_title" = "Server Added";
+"mp.direct.success_msg_prefix" = "Server added:";
+"mp.direct.ip_placeholder" = "Server IP";
+"mp.direct.join_button" = "Join Game";
+
+// Multiplayer - Host Flow
+"mp.host.default_room_name" = "My Multiplayer Room";
+"mp.host.connecting_title" = "Starting Multiplayer";
+"mp.host.connecting_msg" = "Connecting to ZeroTier network, please wait...";
+"mp.host.no_network_id_title" = "Network ID Not Set";
+"mp.host.no_network_id_msg" = "Host must preset a ZeroTier Network ID first. Set it in the multiplayer screen.";
+"mp.host.connected_msg" = "Connected to multiplayer network; open LAN in MC then enter port number.";
+"mp.host.tip.create_world" = "Create a world in MC and tap Open to LAN.";
+"mp.host.tip.manual_port" = "After opening LAN, MC shows the port in chat; enter it below.";
+"mp.host.local_ip" = "Local IP";
+"mp.host.connected_title" = "Multiplayer Enabled";
+"mp.host.port_placeholder" = "Port number (e.g. 54321)";
+"mp.host.generate_code" = "Generate Share Code";
+"mp.host.port_empty_title" = "Port Empty";
+"mp.host.port_empty_msg" = "Please enter the LAN port number.";
+"mp.host.port_invalid_title" = "Invalid Port";
+"mp.host.port_invalid_msg" = "Port must be between 1-65535.";
+"mp.host.share_code_failed" = "Share Code Generation Failed";
+"mp.host.no_local_ip" = "Cannot get local ZeroTier IP; check network and retry.";
+"mp.host.ip_changed_title" = "Host IP Changed";
+"mp.host.ip_changed_msg" = "Your ZeroTier IP changed; old share code is invalid. Send new code to guest.";
+"mp.host.share_code_ready" = "Share code generated! Send this code to your guest:";
+"mp.host.tip.wait_guest" = "Guest enters this code to join your network.";
+"mp.host.server_address" = "Server Address";
+"mp.host.tip.copy_or_share" = "Tap button below to copy or share code.";
+"mp.host.share_code_title" = "Share Code Generated";
+"mp.host.copy_code" = "Copy Code";
+"mp.host.share_button" = "Share...";
+
+// Multiplayer - Guest Flow
+"mp.guest.input_title" = "Enter Share Code";
+"mp.guest.input_msg" = "Enter the share code provided by the host.";
+"mp.guest.code_placeholder" = "Paste share code here";
+"mp.guest.join_button" = "Join";
+"mp.guest.error_title" = "Input Error";
+"mp.guest.error.empty" = "Please enter the share code provided by the host.";
+"mp.guest.error.invalid_code" = "Cannot parse share code; verify it is complete.";
+"mp.guest.error.invalid_network_id" = "Network ID in share code is invalid.";
+"mp.sharecode.invalid" = "Share Code Invalid";
+"mp.sharecode.missing_host" = "Share code missing host IP; verify completeness.";
+"mp.guest.connecting_title" = "Joining Multiplayer";
+"mp.guest.connecting_msg" = "Connecting to host's ZeroTier network, please wait...";
+"mp.guest.connected_msg" = "Connected to host's multiplayer network.";
+"mp.guest.tip.add_server" = "In MC multiplayer screen tap Add Server and paste the address below.";
+"mp.guest.tip.address_copied" = "Server address copied to clipboard; just paste it.";
+"mp.guest.server_address" = "Server Address";
+"mp.guest.tip.auto_saved" = "Address auto-saved to current profile; will auto-connect next launch.";
+"mp.guest.connected_title" = "Joined Multiplayer";
+"mp.unknown" = "Unknown";
+
+// Multiplayer - Sections & Settings
+"mp.ingame.section.role" = "Select Role";
+"mp.ingame.section.status" = "Multiplayer Status";
+"mp.section.settings" = "Multiplayer Settings";
+"mp.section.rooms" = "My Rooms";
+"mp.section.direct" = "Direct Connect";
+"mp.ingame.section.role_footer" = "Host opens LAN in MC; guest enters share code to join.";
+"mp.ingame.section.status_footer" = "Shows current multiplayer network status.";
+"mp.section.settings_footer" = "After enabling, set Network ID for automatic use when hosting.";
+"mp.section.direct_footer" = "Enter server IP and port into current profile; auto-join on launch.";
+"mp.settings.enable_multiplayer" = "Enable Multiplayer";
+"mp.settings.node_online" = "Node online";
+"mp.settings.node_starting" = "Node starting...";
+"mp.settings.node_offline" = "Node offline";
+"mp.settings.preset_network_id" = "Preset Network ID";
+"mp.settings.not_set" = "Not set";
+"mp.settings.zt_guide" = "ZeroTier Network Setup Guide";
+"mp.settings.zt_guide_desc" = "Don't know how to create a network? Tap here.";
+"mp.rooms.empty" = "No rooms (rooms persist only in this session)";
+"mp.rooms.empty_title" = "No Rooms";
+"mp.rooms.empty_msg" = "Set Network ID in Section 0 first, then choose Host or Guest in-game.";
+
+// Multiplayer - In-Game Role Cards
+"mp.ingame.host_title" = "Be Host";
+"mp.ingame.host_desc" = "Create room, open LAN, generate share code.";
+"mp.ingame.guest_title" = "Be Guest";
+"mp.ingame.guest_desc" = "Enter share code to join host's network.";
+"mp.ingame.status.connected" = "Connected";
+"mp.ingame.status.disconnected" = "Disconnected";
+"mp.ingame.status.host_mode" = "Host mode";
+"mp.ingame.status.guest_mode" = "Guest mode";
+"mp.ingame.status.idle" = "Not started";
+"mp.ingame.status.network_id" = "Network ID";
+"mp.ingame.status.local_ip" = "Local IP";
+"mp.ingame.status.share_code" = "Share Code";
+"mp.ingame.status.server_address" = "Server Address";
+"ai.pref.session_list" = "Session List";
+"ai.pref.safety.yolo" = "Auto-approve (YOLO)";
+"ai.pref.default_safety" = "Default Safety Mode";
+"ai.pref.safety.readonly" = "Read-only auto-execute (Safe)";
+"ai.pref.safety.ask" = "Confirm each write (Ask)";
+"ai.pref.confirm_each" = "Confirm each time";
+"ai.pref.provider_config" = "Provider Configuration";
+"ai.pref.auto_approve" = "Auto-approve";
+"ai.pref.markdown_render" = "Markdown Rendering";
+"ai.pref.system_prompt" = "System Prompt";

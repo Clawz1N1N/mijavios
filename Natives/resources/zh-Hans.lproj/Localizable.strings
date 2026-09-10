@@ -692,8 +692,8 @@
 "mc_news.load_failed" = "Failed to load";
 
 // Memory limit help dialog
-"mem_help.title" = "About Memory Limit";
-"mem_help.message" = "iOS 18 / iOS 26 single-instance memory limit is about 1440MB. Large modpacks may crash due to insufficient memory.\n\nSolution:\nUse GetMoreRam (a LiveContainer plugin) to lift the memory limit.\nGetMoreRam repo: github.com/hugeBlack/GetMoreRam\n\nRestart the launcher after installation to take effect.\n\nIf you don't use LiveContainer, try lowering the memory allocation (Settings > Java > Memory Allocation), but some modpacks may not run under the memory limit.";
+"mem_help.title" = "关于内存限制";
+"mem_help.message" = "iOS 18 / iOS 26 单实例内存上限约为 1440MB，玩大型整合包时可能因内存不足崩溃。\n\n解决方法：\n使用 GetMoreRam (LiveContainer 插件) 解除内存限制。\nGetMoreRam 仓库：github.com/hugeBlack/GetMoreRam\n\n安装后重启启动器即可生效。\n\n如果不使用 LiveContainer，可尝试降低内存分配（设置 > Java > 内存分配），但部分整合包在内存限制下可能无法正常运行。";
 
 // Download progress & speed (Phase 6 Task 6.1)
 "download.speed.format" = "%@/s";
@@ -798,7 +798,7 @@
 "resman.mods.search_placeholder" = "Search local mods...";
 "resman.mods.import" = "Import Mods";
 "resman.mods.check_update" = "Check for Updates";
-"resman.mods.filter.all" = "All";
+"resman.mods.filter.all" = "全部";
 "resman.mods.filter.enabled" = "Enabled";
 "resman.mods.filter.disabled" = "Disabled";
 "resman.mods.sort.name" = "Name";
@@ -983,7 +983,7 @@
 "i18n_str_124" = "Waiting";
 "i18n_str_125" = "Paused";
 "i18n_str_126" = "Completed";
-"i18n_str_127" = "Cancelled";
+"i18n_str_127" = "已取消";
 "i18n_str_128" = "Pause";
 "i18n_str_129" = "Resume";
 "i18n_str_130" = "Cannot Resume";
@@ -1282,7 +1282,7 @@
 "i18n_str_466" = "No CurseForge API Key is configured. Configure it in Settings and retry, or continue using the Modrinth source.";
 "i18n_str_467" = "Unable to fetch version information. Please check your network connection or switch download source";
 "i18n_str_468" = "No downloadable versions found. Try switching the download source (Modrinth/CurseForge) or changing the filter conditions";
-"i18n_str_469" = "Export cancelled";
+"i18n_str_469" = "导出已取消";
 "i18n_str_471" = "The specified profile could not be found";
 "i18n_str_472" = "Unable to parse the Minecraft version (lastVersionId format is unrecognizable)";
 "i18n_str_475" = "Failed to generate modrinth.index.json";
@@ -1820,10 +1820,9 @@
 "i18n_str_616" = "Timed out waiting for the ZeroTier node to come online (%.0fs)";
 "i18n_str_629" = "Timed out waiting for the ZeroTier network to be ready (%.0fs). Please confirm the Network ID is correct and that your node has been authorized on the central.zerotier.com dashboard.";
 "i18n_str_632" = "Failed to start the SOCKS5 proxy";
-"i18n_str_637" = "1. Enter the ZeroTier Network ID above on the launcher's online play page\n";
-"i18n_str_638" = "2. Tap \"Join Room\"; the launcher will automatically start the online core and connect
-";
-"i18n_str_639" = "3. After connecting, launch the game and add the server in MC: %@";
+"i18n_str_637" = "1. 在启动器联机页面输入上方的 ZeroTier 网络 ID\n";
+"i18n_str_638" = "2. 点击「加入房间」，启动器会自动启动联机核心并连接\n";
+"i18n_str_639" = "3. 连接成功后启动游戏，在 MC 中添加服务器：%@";
 "i18n_str_832" = "SHA1 checksum failed: expected %@, got %@ (%@)";
 "i18n_str_883" = "Automatically join this server after launching the game (refer to FCL)\nFormat: host or host:port ([host]:port for IPv6); leave empty to not auto-join";
 "i18n_str_952" = "SOCKS5 proxy is already running";
@@ -1892,8 +1891,8 @@
 "i18n_str_2028" = "Go to Downloads";
 "i18n_str_2029" = "Currently using this directory";
 "i18n_str_2030" = "Delete (switch to another directory first)";
-"i18n_str_2031" = "Game Version";
-"i18n_str_2032" = "All Versions";
+"i18n_str_2031" = "游戏版本";
+"i18n_str_2032" = "全部版本";
 "i18n_str_2033" = "Recently Updated";
 "i18n_str_2034" = "No matching version";
 "i18n_str_2035" = "Popularity";
@@ -1919,8 +1918,8 @@
 "i18n_str_2055" = "Select a modpack file";
 "i18n_str_2056" = "   Author: %@";
 "i18n_str_2057" = "Graphics API";
-"i18n_str_2058" = "Release";
-"i18n_str_2059" = "Snapshot";
+"i18n_str_2058" = "正式版";
+"i18n_str_2059" = "测试版";
 "i18n_str_2060" = "Copy";
 "i18n_str_2061" = "Downloads";
 "i18n_str_2062" = "Blue";
@@ -1932,3 +1931,211 @@
 
 "preference.auto" = "Auto";
 "preference.auto_select" = "Auto";
+
+// Multiplayer - Common
+"mp.close" = "关闭";
+"common.cancel" = "取消";
+"common.save" = "保存";
+"common.ok" = "好";
+
+// Multiplayer - Core Status
+"mp.core.unavailable_title" = "联机核心不可用";
+"mp.core.unavailable_msg" = "ZeroTier 联机核心未加载，无法启用联机。请使用包含真实 zt.framework 的构建版本。";
+"mp.node.start_failed_title" = "启动失败";
+"mp.node.start_failed_msg" = "ZeroTier 节点启动失败，请重试。";
+
+// Multiplayer - Network ID
+"mp.network_id.title" = "设置 Network ID";
+"mp.network_id.message" = "在 central.zerotier.com 创建网络后填入 16 位 Network ID，开房时自动使用";
+"mp.network_id.placeholder" = "16 位十六进制 Network ID";
+"mp.network_id.use_adhoc" = "使用快速模式（无需注册）";
+"mp.network_id.adhoc_failed_title" = "生成失败";
+"mp.network_id.adhoc_failed_msg" = "无法生成快速模式 Network ID，请改用标准模式";
+"mp.network_id.adhoc_success_title" = "已启用快速模式";
+"mp.network_id.adhoc_success_msg" = "已自动生成 Network ID，无需注册账号即可联机。注意：快速模式稳定性不如标准模式，IP 可能变化。";
+"mp.network_id.invalid_title" = "格式不正确";
+"mp.network_id.invalid_msg" = "Network ID 应为 16 位十六进制字符串";
+
+// Multiplayer - Guide
+"mp.guide.mode_standard" = "标准模式";
+"mp.guide.stable" = "稳定";
+"mp.guide.mode_standard_desc" = "在 central.zerotier.com 注册账号并创建组织，获得固定的 Network ID。IP 稳定、支持授权管理、每人独立网络。";
+"mp.guide.mode_fast" = "快速模式";
+"mp.guide.unstable" = "不稳定";
+"mp.guide.mode_fast_desc" = "使用 Ad-hoc 网络自动生成 Network ID，无需注册账号。但只有 IPv6 地址、公开网络安全性弱、IP 可能变化。";
+"mp.guide.step1_title" = "注册 ZeroTier 账号";
+"mp.guide.step1_desc" = "访问 central.zerotier.com（新版 Central），注册并登录账号（免费，支持 Google/GitHub/Microsoft 登录）";
+"mp.guide.step2_title" = "创建组织";
+"mp.guide.step2_desc" = "登录后输入组织名称，点击「Create Organization」。免费套餐自带一个 Network Group 和一个 Network";
+"mp.guide.step3_title" = "获取 Network ID";
+"mp.guide.step3_desc" = "在左侧边栏展开「Networks」，点击默认网络（如 my-first-network），复制顶部的 16 位 Network ID";
+"mp.guide.step4_title" = "设置网络访问控制";
+"mp.guide.step4_desc" = "Private（推荐）：需手动授权成员更安全；Public：任何人可直接加入";
+"mp.guide.step5_title" = "填入启动器";
+"mp.guide.step5_desc" = "回到本页面，点击「预设 Network ID」行，粘贴并保存";
+"mp.guide.step6_title" = "授权房客设备";
+"mp.guide.step6_desc" = "房客加入后在「Member Devices」标签点击三点菜单→「Authorize」授权（Private 模式需要，Public 模式跳过）";
+"mp.guide.step7_title" = "开始联机";
+"mp.guide.step7_desc" = "启动游戏后在悬浮球中打开联机界面，选择「当房主」即可开房";
+"mp.guide.fast_step1_title" = "点击「预设 Network ID」";
+"mp.guide.fast_step1_desc" = "在本页面点击「预设 Network ID」行";
+"mp.guide.fast_step2_title" = "选择快速模式";
+"mp.guide.fast_step2_desc" = "点击「使用快速模式（无需注册）」按钮，系统自动生成 Network ID";
+"mp.guide.fast_step3_title" = "开始联机";
+"mp.guide.fast_step3_desc" = "启动游戏后在悬浮球中打开联机界面，选择「当房主」即可开房";
+"mp.guide.intro" = "ZeroTier 提供两种联机模式，根据需求选择：";
+"mp.guide.note" = "注意：房主和房客使用相同的 Network ID 才能联机。标准模式需在后台授权成员（Private）或设为 Public。快速模式所有人共享同一公开网络。";
+"mp.guide.title" = "ZeroTier 联机教程";
+"mp.guide.open_website" = "打开 central.zerotier.com（标准模式）";
+"mp.guide.use_fast_mode" = "使用快速模式";
+
+// Multiplayer - Connection
+"mp.connect.failed" = "连接失败";
+"mp.connect.failed_msg" = "无法连接到房间，请检查 Network ID 是否正确以及网络是否畅通。";
+"mp.connect.port_forward_failed_msg" = "端口转发器启动失败，无法连接到房主。请尝试断开重连。";
+
+// Multiplayer - Room Actions
+"mp.room.unnamed" = "未命名房间";
+"mp.room.network_id" = "Network ID";
+"mp.room.action.disconnect" = "断开连接";
+"mp.room.action.connect" = "连接房间";
+"mp.room.action.share" = "分享房间";
+"mp.room.action.delete" = "删除房间";
+"mp.room.delete.confirm_title" = "确认删除";
+"mp.room.delete.confirm_prefix" = "确定要删除房间";
+"mp.room.delete.confirm_warning" = "此操作无法撤销。";
+"mp.room.delete.button" = "删除";
+"mp.room.server_address" = "服务器地址";
+"mp.room.status.disconnected" = "未连接";
+"mp.room.status.connecting" = "连接中";
+"mp.room.status.connected" = "已连接";
+"mp.room.status.error" = "错误";
+"mp.room.button.disconnect" = "断开";
+"mp.room.button.connecting" = "连接中";
+"mp.room.button.connect" = "连接";
+
+// Multiplayer - Direct Connect
+"mp.direct.error_title" = "提示";
+"mp.direct.error.ip_empty" = "请输入服务器 IP 地址";
+"mp.direct.error.ip_invalid" = "IP 地址格式不正确，请检查输入";
+"mp.direct.error.no_profile" = "未找到当前 profile，请先选择一个游戏配置";
+"mp.direct.success_title" = "已添加服务器";
+"mp.direct.success_msg_prefix" = "已添加服务器";
+"mp.direct.ip_placeholder" = "服务器 IP";
+"mp.direct.join_button" = "加入游戏";
+
+// Multiplayer - Host Flow
+"mp.host.default_room_name" = "我的联机房间";
+"mp.host.connecting_title" = "正在开启联机";
+"mp.host.connecting_msg" = "正在连接到 ZeroTier 网络，请稍候...";
+"mp.host.no_network_id_title" = "未设置 Network ID";
+"mp.host.no_network_id_msg" = "房主需要先设置预设 ZeroTier Network ID。请在启动器联机界面中设置后再来。";
+"mp.host.connected_msg" = "已连接到联机网络，请在 MC 中开放局域网后输入端口号";
+"mp.host.tip.create_world" = "请在 MC 中创建世界并点击「对局域网开放」";
+"mp.host.tip.manual_port" = "开放局域网后，MC 会在聊天框显示端口号，请将其输入下方";
+"mp.host.local_ip" = "本机 IP";
+"mp.host.connected_title" = "联机已开启";
+"mp.host.port_placeholder" = "端口号（如 54321）";
+"mp.host.generate_code" = "生成分享代码";
+"mp.host.port_empty_title" = "端口为空";
+"mp.host.port_empty_msg" = "请输入 LAN 端口号";
+"mp.host.port_invalid_title" = "端口无效";
+"mp.host.port_invalid_msg" = "端口号必须在 1-65535 之间";
+"mp.host.share_code_failed" = "生成分享代码失败";
+"mp.host.no_local_ip" = "无法获取本机 ZeroTier IP，请检查网络连接后重试";
+"mp.host.ip_changed_title" = "房主 IP 已变化";
+"mp.host.ip_changed_msg" = "你的 ZeroTier IP 已变化，之前分享的旧代码已失效。请将新的分享代码重新发给房客。";
+"mp.host.share_code_ready" = "分享代码已生成！将以下代码发给房客：";
+"mp.host.tip.wait_guest" = "房客输入此代码即可加入你的联机网络";
+"mp.host.server_address" = "服务器地址";
+"mp.host.tip.copy_or_share" = "可点击下方按钮复制或分享代码";
+"mp.host.share_code_title" = "分享代码已生成";
+"mp.host.copy_code" = "复制代码";
+"mp.host.share_button" = "分享...";
+
+// Multiplayer - Guest Flow
+"mp.guest.input_title" = "输入分享代码";
+"mp.guest.input_msg" = "请输入房主提供的分享代码";
+"mp.guest.code_placeholder" = "在此粘贴分享代码";
+"mp.guest.join_button" = "加入";
+"mp.guest.error_title" = "输入为空";
+"mp.guest.error.empty" = "请输入房主提供的分享代码";
+"mp.guest.error.invalid_code" = "无法解析分享代码，请确认代码完整无误";
+"mp.guest.error.invalid_network_id" = "分享代码中的 Network ID 无效";
+"mp.sharecode.invalid" = "分享代码无效";
+"mp.sharecode.missing_host" = "分享代码缺少房主 IP，请确认代码完整无误";
+"mp.guest.connecting_title" = "正在加入联机";
+"mp.guest.connecting_msg" = "正在连接到房主的 ZeroTier 网络，请稍候...";
+"mp.guest.connected_msg" = "已连接到房主的联机网络";
+"mp.guest.tip.add_server" = "请在 MC 多人游戏界面点击「添加服务器」，粘贴以下地址即可加入";
+"mp.guest.tip.address_copied" = "服务器地址已自动复制到剪贴板，直接粘贴即可";
+"mp.guest.server_address" = "服务器地址";
+"mp.guest.tip.auto_saved" = "地址已自动保存到当前配置，下次启动游戏会自动连接";
+"mp.guest.connected_title" = "已加入联机";
+"mp.unknown" = "未知";
+
+// Multiplayer - Sections & Settings
+"mp.ingame.section.role" = "选择角色";
+"mp.ingame.section.status" = "联机状态";
+"mp.section.settings" = "联机设置";
+"mp.section.rooms" = "我的房间";
+"mp.section.direct" = "直连";
+"mp.ingame.section.role_footer" = "房主需在 MC 中开放局域网，房客输入分享代码即可加入";
+"mp.ingame.section.status_footer" = "显示当前联机网络的状态信息";
+"mp.section.settings_footer" = "启用联机后可设置 Network ID，房主开房时自动使用";
+"mp.section.direct_footer" = "输入服务器 IP 和端口，写入当前 profile，启动游戏后自动加入";
+"mp.settings.enable_multiplayer" = "启用联机";
+"mp.settings.node_online" = "节点已上线";
+"mp.settings.node_starting" = "节点启动中...";
+"mp.settings.node_offline" = "节点未启动";
+"mp.settings.preset_network_id" = "预设 Network ID";
+"mp.settings.not_set" = "未设置";
+"mp.settings.zt_guide" = "ZeroTier 网络创建教程";
+"mp.settings.zt_guide_desc" = "不知道怎么创建网络？点这里";
+"mp.rooms.empty" = "暂无房间（房间仅在本次会话中保留）";
+"mp.rooms.empty_title" = "暂无房间";
+"mp.rooms.empty_msg" = "请先在 Section 0 设置 Network ID，然后在游戏内模式中选择当房主或房客";
+
+// Multiplayer - In-Game Role Cards
+"mp.ingame.host_title" = "当房主";
+"mp.ingame.host_desc" = "创建联机房间，开放局域网后生成分享代码";
+"mp.ingame.guest_title" = "当房客";
+"mp.ingame.guest_desc" = "输入分享代码，加入房主的联机网络";
+"mp.ingame.status.connected" = "已连接";
+"mp.ingame.status.disconnected" = "未连接";
+"mp.ingame.status.host_mode" = "房主模式";
+"mp.ingame.status.guest_mode" = "房客模式";
+"mp.ingame.status.idle" = "未开始";
+"mp.ingame.status.network_id" = "Network ID";
+"mp.ingame.status.local_ip" = "本地 IP";
+"mp.ingame.status.share_code" = "分享代码";
+"mp.ingame.status.server_address" = "服务器地址";
+"preference.title.enable_altkit" = "使用 AltKit 启用 JIT";
+"preference.title.debug_show_layout_bounds" = "显示边界布局";
+"launcher.menu.install_jar" = "安装 .jar";
+"custom_controls.control_menu.save.error.default" = "控件名称不能是“default”，因为它是不可更改的。";
+"preference.detail.debug_show_layout_overlap" = "用浅黄色覆盖每个视图，颜色越深则重叠越多";
+"preference.detail.jitstreamer_server" = "该选项将自定义获取 JIT 权限地址的 JitStreamer 服务器。能用就别动！";
+"preference.popup.touch_info.message" = "本功能是为 TouchController 模组制作的非官方 iOS 兼容方案。\n\nMod项目地址：https://github.com/TouchController/TouchController\n\n技术说明：\n由于模组不支持 iOS，本功能通过本地 UDP 协议 (Localhost) 在启动器与游戏进程间建立通信桥接。此连接仅用于设备内部传输触控数据，绝不会连接互联网，请放心使用。\n此功能由WeiErLiTeo制作。";
+"preference.detail.two_finger_keyboard" = "在游戏中双指长按屏幕呼出键盘。";
+"preference.detail.custom_controls" = "自定义游戏控制布局，拖拽按钮位置和大小";
+"preference.detail.enable_altkit" = "启用时，Amethyst 将尝试连接到本地 AltServers 以启用 JIT。";
+"preference.title.custom_controls" = "键位调整";
+"preference.detail.debug_show_layout_bounds" = "显示剪辑边界、边距";
+"preference.popup.touch_info.title" = "TouchController 适配说明";
+"preference.title.mod_touch_enable" = "启用 TouchController 支持";
+"preference.title.debug_show_layout_overlap" = "布局重叠显示";
+"preference.detail.mod_touch_enable" = "启用 TouchController 模组支持。注意：开启此项将禁用“可滑动快捷栏”。";
+"preference.title.jitstreamer_server" = "JitStreamer的服务器地址";
+"spdt" = "我是个飞机!!!!!!";
+"preference.title.two_finger_keyboard" = "双指呼出键盘";
+"ai.pref.session_list" = "会话列表";
+"ai.pref.safety.yolo" = "自动批准（YOLO）";
+"ai.pref.default_safety" = "默认安全模式";
+"ai.pref.safety.readonly" = "只读自动执行（Safe）";
+"ai.pref.safety.ask" = "写操作逐次确认（Ask）";
+"ai.pref.confirm_each" = "逐次确认";
+"ai.pref.provider_config" = "提供商配置";
+"ai.pref.auto_approve" = "自动批准";
+"ai.pref.markdown_render" = "Markdown 渲染";
+"ai.pref.system_prompt" = "系统提示词";

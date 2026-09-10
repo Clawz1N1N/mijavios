@@ -1,4 +1,4 @@
-#import "VersionManagerViewController.h"
+﻿#import "VersionManagerViewController.h"
 #import "BackgroundManager.h"
 #import "PLProfiles.h"
 #import "ProfileSettingsViewController.h"
@@ -831,7 +831,7 @@ static NSInteger const kSectionVersions    = 1;
 /// 找到视图中的 FAB 按钮
 - (UIButton *)findFabButton {
     for (UIView *v in self.view.subviews) {
-        if ([v isKindOfClass:[UIButton class]] && [v.accessibilityLabel isEqualToString:@"新建版本"]) {
+        if ([v isKindOfClass:[UIButton class]] && [v.accessibilityLabel isEqualToString:localize(@"i18n_str_2027", nil)]) {
             return (UIButton *)v;
         }
     }
