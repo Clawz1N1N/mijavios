@@ -775,6 +775,8 @@ NSString *const ForgeDirectInstallerErrorDomain = @"ForgeDirectInstallerErrorDom
     NSUInteger count = 0;
     NSFileManager *fm = [NSFileManager defaultManager];
     for (NSString *name in filenames) {
+        // 每个条目独立 autoreleasepool：解压大 jar 时及时释放 NSData，避免内存峰值触发 jetsam（方法1 OOM 修复）
+        @autoreleasepool {
         // 只处理 maven/ 前缀的文件
         if (![name hasPrefix:@"maven/"]) continue;
         // 跳过目录条目（以 / 结尾），避免 extractDataFromFile 返回空数据产生误报日志
@@ -813,6 +815,7 @@ NSString *const ForgeDirectInstallerErrorDomain = @"ForgeDirectInstallerErrorDom
             continue;
         }
         count++;
+        } // @autoreleasepool
     }
     return count;
 }
@@ -837,6 +840,8 @@ NSString *const ForgeDirectInstallerErrorDomain = @"ForgeDirectInstallerErrorDom
     NSMutableArray<NSString *> *criticalFailures = [NSMutableArray array];  // 关键库失败清单
 
     for (NSDictionary *library in libraries) {
+        // 每个库独立 autoreleasepool：下载大 jar（整包进内存后原子写盘）及时释放，避免累积触发 jetsam（方法1 OOM 修复）
+        @autoreleasepool {
         if (![library isKindOfClass:[NSDictionary class]]) continue;
 
         NSString *name = [library[@"name"] isKindOfClass:[NSString class]] ? library[@"name"] : nil;
@@ -945,6 +950,7 @@ NSString *const ForgeDirectInstallerErrorDomain = @"ForgeDirectInstallerErrorDom
             // 不中断流程，部分库可能不重要或可由游戏启动时再次下载
         }
         processed++;
+        } // @autoreleasepool
     }
 
     NSLog(@"[ForgeDirect] Library download summary: downloaded=%lu, skipped=%lu, failed=%lu, total=%lu, criticalFailures=%lu",
