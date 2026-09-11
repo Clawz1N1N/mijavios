@@ -1,0 +1,229 @@
+[Pre-Init] Amethyst iOS Remastered INIT!
+[Pre-Init] GitHub: https://github.com/herbrine8403/Amethyst-iOS-MyRemastered
+[Pre-Init] Please try not to post this log of the remastered launcher to the original GitHub Issues for help.
+[Pre-Init] Version: 5.0.0
+[Pre-Init] Commit: 48a0202 (main)
+[Pre-Init] Device: iPad (9th generation)
+[Pre-Init] iPadOS 18.1 (22B83) (Unjailbroken)
+[Pre-init] Entitlements availability:
+* com.apple.developer.kernel.extended-virtual-addressing: NO
+* com.apple.developer.kernel.increased-memory-limit: NO
+* com.apple.private.security.no-sandbox: NO
+[Debugging] Debug log enabled: YES
+[Pre-init] Restored game directory preference (default)
+[SceneDelegate] Failed to update geometry: Error Domain=UISceneErrorDomain Code=101 "Поточний режим відображення вікон не дозволяє програмні зміни орієнтації інтерфейсу." UserInfo={NSLocalizedDescription=Поточний режим відображення вікон не дозволяє програмні зміни орієнтації інтерфейсу.}
+[SceneDelegate] Terracotta temporarily disabled for crash investigation
+[IconLoader] Initialization complete, disk cache directory: /var/mobile/Containers/Data/Application/072D04EF-7FCE-4B0B-AF15-347F02E90DA7/Documents/Data/Application/0E7BECA2-763C-4E70-9D1D-A3377CEA8800/Library/Caches/IconLoader, mirror enabled: YES
+[LauncherRootVC] Loaded 912 remote versions
+[DownloadTaskManager] updateTaskWithId:stageAtIndex:rate: invalid stage index 3 for task 49B15C29-5493-41C6-96DC-3DCD112A3C0C
+[DownloadTaskManager] updateTaskWithId:stageAtIndex:rate: invalid stage index 4 for task 49B15C29-5493-41C6-96DC-3DCD112A3C0C
+[MCDL] SHA1 passed for 26.2.json
+[MCDL] insertSafety: how to insert assetIndex?
+[MCDL] insertSafety: how to insert assets?
+[MCDL] Replacing JNA 5.17.0 with 5.13.0 for iOS compatibility (required by 26.2-forge-65.1.3)
+[MDCL] Skipped library org.lwjgl:lwjgl-freetype:3.4.1
+[MDCL] Skipped library org.lwjgl:lwjgl-freetype:3.4.1:natives-linux
+[MDCL] Skipped library org.lwjgl:lwjgl-freetype:3.4.1:natives-macos
+[MDCL] Skipped library org.lwjgl:lwjgl-freetype:3.4.1:natives-macos-arm64
+[MDCL] Skipped library org.lwjgl:lwjgl-freetype:3.4.1:natives-windows
+[MDCL] Skipped library org.lwjgl:lwjgl-freetype:3.4.1:natives-windows-arm64
+[MDCL] Skipped library org.lwjgl:lwjgl-freetype:3.4.1:natives-windows-x86
+[MDCL] Skipped library org.lwjgl:lwjgl-glfw:3.4.1
+[MDCL] Skipped library org.lwjgl:lwjgl-glfw:3.4.1:natives-linux
+[MDCL] Skipped library org.lwjgl:lwjgl-glfw:3.4.1:natives-macos
+[MDCL] Skipped library org.lwjgl:lwjgl-glfw:3.4.1:natives-macos-arm64
+[MDCL] Skipped library org.lwjgl:lwjgl-glfw:3.4.1:natives-windows
+[MDCL] Skipped library org.lwjgl:lwjgl-glfw:3.4.1:natives-windows-arm64
+[MDCL] Skipped library org.lwjgl:lwjgl-glfw:3.4.1:natives-windows-x86
+[MDCL] Skipped library org.lwjgl:lwjgl-jemalloc:3.4.1
+[MDCL] Skipped library org.lwjgl:lwjgl-jemalloc:3.4.1:natives-linux
+[MDCL] Skipped library org.lwjgl:lwjgl-jemalloc:3.4.1:natives-macos
+[MDCL] Skipped library org.lwjgl:lwjgl-jemalloc:3.4.1:natives-macos-arm64
+[MDCL] Skipped library org.lwjgl:lwjgl-jemalloc:3.4.1:natives-windows
+[MDCL] Skipped library org.lwjgl:lwjgl-jemalloc:3.4.1:natives-windows-arm64
+[MDCL] Skipped library org.lwjgl:lwjgl-jemalloc:3.4.1:natives-windows-x86
+[MDCL] Skipped library org.lwjgl:lwjgl-openal:3.4.1
+[MDCL] Skipped library org.lwjgl:lwjgl-openal:3.4.1:natives-linux
+[MDCL] Skipped library org.lwjgl:lwjgl-openal:3.4.1:natives-macos
+[MDCL] Skipped library org.lwjgl:lwjgl-openal:3.4.1:natives-macos-arm64
+[MDCL] Skipped library org.lwjgl:lwjgl-openal:3.4.1:natives-windows
+[MDCL] Skipped library org.lwjgl:lwjgl-openal:3.4.1:natives-windows-arm64
+[MDCL] Skipped library org.lwjgl:lwjgl-openal:3.4.1:natives-windows-x86
+[MDCL] Skipped library org.lwjgl:lwjgl-opengl:3.4.1
+[MDCL] Skipped library org.lwjgl:lwjgl-opengl:3.4.1:natives-linux
+[MDCL] Skipped library org.lwjgl:lwjgl-opengl:3.4.1:natives-macos
+[MDCL] Skipped library org.lwjgl:lwjgl-opengl:3.4.1:natives-macos-arm64
+[MDCL] Skipped library org.lwjgl:lwjgl-opengl:3.4.1:natives-windows
+[MDCL] Skipped library org.lwjgl:lwjgl-opengl:3.4.1:natives-windows-arm64
+[MDCL] Skipped library org.lwjgl:lwjgl-opengl:3.4.1:natives-windows-x86
+[MDCL] Skipped library org.lwjgl:lwjgl-shaderc:3.4.1
+[MDCL] Skipped library org.lwjgl:lwjgl-shaderc:3.4.1:natives-linux
+[MDCL] Skipped library org.lwjgl:lwjgl-shaderc:3.4.1:natives-macos
+[MDCL] Skipped library org.lwjgl:lwjgl-shaderc:3.4.1:natives-macos-arm64
+[MDCL] Skipped library org.lwjgl:lwjgl-shaderc:3.4.1:natives-windows
+[MDCL] Skipped library org.lwjgl:lwjgl-shaderc:3.4.1:natives-windows-arm64
+[MDCL] Skipped library org.lwjgl:lwjgl-shaderc:3.4.1:natives-windows-x86
+[MDCL] Skipped library org.lwjgl:lwjgl-spvc:3.4.1
+[MDCL] Skipped library org.lwjgl:lwjgl-spvc:3.4.1:natives-linux
+[MDCL] Skipped library org.lwjgl:lwjgl-spvc:3.4.1:natives-macos
+[MDCL] Skipped library org.lwjgl:lwjgl-spvc:3.4.1:natives-macos-arm64
+[MDCL] Skipped library org.lwjgl:lwjgl-spvc:3.4.1:natives-windows
+[MDCL] Skipped library org.lwjgl:lwjgl-spvc:3.4.1:natives-windows-arm64
+[MDCL] Skipped library org.lwjgl:lwjgl-spvc:3.4.1:natives-windows-x86
+[MDCL] Skipped library org.lwjgl:lwjgl-stb:3.4.1
+[MDCL] Skipped library org.lwjgl:lwjgl-stb:3.4.1:natives-linux
+[MDCL] Skipped library org.lwjgl:lwjgl-stb:3.4.1:natives-macos
+[MDCL] Skipped library org.lwjgl:lwjgl-stb:3.4.1:natives-macos-arm64
+[MDCL] Skipped library org.lwjgl:lwjgl-stb:3.4.1:natives-windows
+[MDCL] Skipped library org.lwjgl:lwjgl-stb:3.4.1:natives-windows-arm64
+[MDCL] Skipped library org.lwjgl:lwjgl-stb:3.4.1:natives-windows-x86
+[MDCL] Skipped library org.lwjgl:lwjgl-tinyfd:3.4.1
+[MDCL] Skipped library org.lwjgl:lwjgl-tinyfd:3.4.1:natives-linux
+[MDCL] Skipped library org.lwjgl:lwjgl-tinyfd:3.4.1:natives-macos
+[MDCL] Skipped library org.lwjgl:lwjgl-tinyfd:3.4.1:natives-macos-arm64
+[MDCL] Skipped library org.lwjgl:lwjgl-tinyfd:3.4.1:natives-windows
+[MDCL] Skipped library org.lwjgl:lwjgl-tinyfd:3.4.1:natives-windows-arm64
+[MDCL] Skipped library org.lwjgl:lwjgl-tinyfd:3.4.1:natives-windows-x86
+[MDCL] Skipped library org.lwjgl:lwjgl-vma:3.4.1
+[MDCL] Skipped library org.lwjgl:lwjgl-vma:3.4.1:natives-linux
+[MDCL] Skipped library org.lwjgl:lwjgl-vma:3.4.1:natives-macos
+[MDCL] Skipped library org.lwjgl:lwjgl-vma:3.4.1:natives-macos-arm64
+[MDCL] Skipped library org.lwjgl:lwjgl-vma:3.4.1:natives-windows
+[MDCL] Skipped library org.lwjgl:lwjgl-vma:3.4.1:natives-windows-arm64
+[MDCL] Skipped library org.lwjgl:lwjgl-vma:3.4.1:natives-windows-x86
+[MDCL] Skipped library org.lwjgl:lwjgl-vulkan:3.4.1
+[MDCL] Skipped library org.lwjgl:lwjgl-vulkan:3.4.1:natives-macos
+[MDCL] Skipped library org.lwjgl:lwjgl-vulkan:3.4.1:natives-macos-arm64
+[MDCL] Skipped library org.lwjgl:lwjgl:3.4.1:natives-linux
+[MDCL] Skipped library org.lwjgl:lwjgl:3.4.1:natives-macos
+[MDCL] Skipped library org.lwjgl:lwjgl:3.4.1:natives-macos-arm64
+[MDCL] Skipped library org.lwjgl:lwjgl:3.4.1:natives-windows
+[MDCL] Skipped library org.lwjgl:lwjgl:3.4.1:natives-windows-arm64
+[MDCL] Skipped library org.lwjgl:lwjgl:3.4.1:natives-windows-x86
+[MDCL] Skipped library org.lwjgl:lwjgl:3.4.1:unsafe
+[MCDL] Downloading 26.2-forge-65.1.3.jar
+[SurfaceViewController] FPS counter setup: profileRenderer=auto, envRenderer=(null), graphicsApi=(null), isVulkan=0, configuredVulkanExpected=0 (actual path decided at runtime via pojavIsActualVulkanPath)
+[SurfaceVC] CAMetalLayer configured: drawableSize=2160x1620, maximumDrawableCount=3, presentsWithTransaction=0, drawsAsynchronously=1, contentsScale=2.00
+[TouchController] Sender ready on port 12450
+[SurfaceViewController] Launching Minecraft with accountId: FC8FD93A-07E8-4CA5-BA67-1D10058BD6AE, version: 25, size: 2160x1620
+[JavaLauncher] Beginning JVM launch
+[JavaLauncher] MoltenVK performance tracking + IMMEDIATE present mode requested for VSync diagnosis
+[JavaLauncher] Framerate unlock configuration:
+[JavaLauncher]   video.disable_game_vsync=1
+[JavaLauncher]   POJAV_DISABLE_VSYNC=1
+[JavaLauncher]   UIScreen.maximumFramesPerSecond=60
+[JavaLauncher] Reading custom environment variables
+[JavaLauncher] Warning: skipped empty value custom env variable: 
+[DyldLVBypass] init
+[DyldLVBypass] Using redirectFunctionDirect
+[DyldLVBypass] hook dyld_mmap fails line 123
+[DyldLVBypass] hook dyld_fcntl fails line 123
+[DyldLVBypass] Dopamine hook not found
+[JavaLauncher] init_loadMobileGluesConfig: renderer=auto
+[JavaLauncher] WARNING: renderer is 'auto', will be resolved to ANGLE. MobileGlues settings will NOT take effect. Please explicitly select 'MobileGlues' renderer to use these settings.
+[JavaLauncher]   mobileglues.enable_angle = 0 -> enableANGLE = 0 (3=ForceEnable, 0=DisableIfPossible)
+[JavaLauncher]   mobileglues.enable_no_error = 0 -> enableNoError = 0
+[JavaLauncher]   mobileglues.enable_ext_timer_query = 1 -> enableExtTimerQuery = 1
+[JavaLauncher]   mobileglues.enable_ext_compute_shader = 0 -> enableExtComputeShader = 0
+[JavaLauncher]   mobileglues.enable_ext_direct_state_access = 0 -> enableExtDirectStateAccess = 0
+[JavaLauncher]   mobileglues.max_glsl_cache_size = 32 -> maxGlslCacheSize = 32
+[JavaLauncher]   mobileglues.multidraw_mode = 0 -> multidrawMode = 0
+[JavaLauncher]   mobileglues.angle_depth_clear_fix_mode = 0 -> angleDepthClearFixMode = 0
+[JavaLauncher]   mobileglues.custom_gl_version = 0 (raw)
+[JavaLauncher]   -> customGLVersion = 40 (decimal, MobileGlues Version(int) format)
+[JavaLauncher]   mobileglues.fsr1_setting = 0 -> fsr1Setting = 0
+[JavaLauncher] MobileGlues config written to /private/var/mobile/Containers/Data/Application/072D04EF-7FCE-4B0B-AF15-347F02E90DA7/Documents/Data/Application/0E7BECA2-763C-4E70-9D1D-A3377CEA8800/Documents/MG/config.json
+[JavaLauncher] config.json content:
+{
+  "multidrawMode" : 0,
+  "fsr1Setting" : 0,
+  "enableExtGL43" : 1,
+  "maxGlslCacheSize" : 32,
+  "enableANGLE" : 0,
+  "enableExtDirectStateAccess" : 0,
+  "customGLVersion" : 40,
+  "enableExtTimerQuery" : 1,
+  "enableExtComputeShader" : 0,
+  "enableNoError" : 0,
+  "angleDepthClearFixMode" : 0
+}
+[JavaLauncher] RENDERER is set to auto
+[JavaLauncher] GRAPHICS_API is set to default
+[JavaLauncher] Looking for Java 25 or later
+[JavaLauncher] JAVA_HOME has been set to /private/var/mobile/Containers/Data/Application/072D04EF-7FCE-4B0B-AF15-347F02E90DA7/Documents/Applications/com.air-devs.air_810497207.app/java_runtimes/java-25-openjdk
+[JavaLauncher] Max RAM allocation is set to 735 MB
+[JavaLauncher] library.path = /private/var/mobile/Containers/Data/Application/072D04EF-7FCE-4B0B-AF15-347F02E90DA7/Documents/Applications/com.air-devs.air_810497207.app/Frameworks
+[JavaLauncher] Published Metallum surface view: 0x14cfda140 (scale=2)
+[JavaLauncher] Added JVM property -Dmax.fps=260 (frame rate unlock layer 4)
+[JavaLauncher] Auto renderer resolved to libtinygl4angle.dylib (always ANGLE)
+[JavaLauncher] JVM GC optimization: G1GC + MaxGCPauseMillis=50 + StringDeduplication (Java 17+)
+[PLDisplayLinkTarget] displayLinkTick #1 (configuredVulkan=0, actualVulkanPath=0, stateChanged=0)
+[JavaLauncher] Caciocavallo: isJava8=0 libs=libs_caciocavallo17 mode=/a
+[JavaLauncher] Reading custom JVM flags
+[Init] Found JLI lib
+[JavaLauncher] Using LWJGL jar at /private/var/mobile/Containers/Data/Application/072D04EF-7FCE-4B0B-AF15-347F02E90DA7/Documents/Applications/com.air-devs.air_810497207.app/libs/lwjgl.jar
+[Init] Calling JLI_Launch
+[PLDisplayLinkTarget] displayLinkTick #2 (configuredVulkan=0, actualVulkanPath=0, stateChanged=0)
+[PLDisplayLinkTarget] displayLinkTick #3 (configuredVulkan=0, actualVulkanPath=0, stateChanged=0)
+[PLDisplayLinkTarget] displayLinkTick #4 (configuredVulkan=0, actualVulkanPath=0, stateChanged=0)
+[PLDisplayLinkTarget] displayLinkTick #5 (configuredVulkan=0, actualVulkanPath=0, stateChanged=0)
+OpenJDK 64-Bit Server VM warning: Option UseCompressedClassPointers was deprecated in version 25.0 and will likely be removed in a future release.
+OpenJDK 64-Bit Server VM warning: Compact object headers require compressed class pointers. Disabling compact object headers.
+WARNING: Unknown module: cpw.mods.bootstraplauncher specified to --add-exports
+WARNING: package sun.security.action not in java.base
+PatchJNAAgent: premain called
+Arc Capes DNS Injector
+Parts of Alibaba's DCM library were used, please read https://github.com/alibaba/java-dns-cache-manipulator/blob/main/README.md for more info
+Added DNS cache entry: s.optifine.net/23.95.137.176
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::staticFieldBase has been called by com.github.caciocavallosilano.cacio.ctc.CTCPreloadClassLoader
+WARNING: Please consider reporting this to the maintainers of class com.github.caciocavallosilano.cacio.ctc.CTCPreloadClassLoader
+WARNING: sun.misc.Unsafe::staticFieldBase will be removed in a future release
+[PojavLauncher] VSync disabled, maxFps/maxFramerate/framerateLimit set to 260
+[PojavLauncher]   enableVsync=false
+[PojavLauncher]   maxFps=260
+[PojavLauncher]   maxFramerate=260
+[PojavLauncher]   framerateLimit=260
+[PojavLauncher]   inactivityFpsLimit=minimized
+[PojavLauncher] MC 26.2+ graphicsApi cleared (default)
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::loadLibrary has been called by net.kdt.pojavlaunch.value.MinecraftAccount in an unnamed module (file:/private/var/mobile/Containers/Data/Application/072D04EF-7FCE-4B0B-AF15-347F02E90DA7/Documents/Applications/com.air-devs.air_810497207.app/libs/launcher.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+Library com.google.guava:guava: Replaced version guava with guava
+Library com.google.guava:failureaccess: Replaced version failureaccess with failureaccess
+Library org.jspecify:jspecify: Replaced version jspecify with jspecify
+[Tools] Replacing JNA 5.17.0 with 5.13.0 for iOS compatibility
+Launching Minecraft 26.2-forge-65.1.3
+[PojavLauncher] Using fallback log4j config: /private/var/mobile/Containers/Data/Application/072D04EF-7FCE-4B0B-AF15-347F02E90DA7/Documents/Applications/com.air-devs.air_810497207.app/log4j-rce-patch-1.12.xml
+Args init finished. Now starting game
+Ignoring duplicate module on SecureModuleFinder: com.google.gson: Jar[jar:file:///private/var/mobile/Containers/Data/Application/072D04EF-7FCE-4B0B-AF15-347F02E90DA7/Documents/Data/Application/0E7BECA2-763C-4E70-9D1D-A3377CEA8800/Documents/instances/default/libraries/com/google/code/gson/gson/2.14.0/gson-2.14.0.jar!/]
+Ignoring duplicate module on SecureModuleFinder: jtracy: Jar[jar:file:///private/var/mobile/Containers/Data/Application/072D04EF-7FCE-4B0B-AF15-347F02E90DA7/Documents/Data/Application/0E7BECA2-763C-4E70-9D1D-A3377CEA8800/Documents/instances/default/libraries/com/mojang/jtracy/1.0.37/jtracy-1.0.37-natives-linux.jar!/]
+Ignoring duplicate module on SecureModuleFinder: jtracy: Jar[jar:file:///private/var/mobile/Containers/Data/Application/072D04EF-7FCE-4B0B-AF15-347F02E90DA7/Documents/Data/Application/0E7BECA2-763C-4E70-9D1D-A3377CEA8800/Documents/instances/default/libraries/com/mojang/jtracy/1.0.37/jtracy-1.0.37-natives-macos.jar!/]
+Ignoring duplicate module on SecureModuleFinder: jtracy: Jar[jar:file:///private/var/mobile/Containers/Data/Application/072D04EF-7FCE-4B0B-AF15-347F02E90DA7/Documents/Data/Application/0E7BECA2-763C-4E70-9D1D-A3377CEA8800/Documents/instances/default/libraries/com/mojang/jtracy/1.0.37/jtracy-1.0.37-natives-macos-arm64.jar!/]
+Ignoring duplicate module on SecureModuleFinder: jtracy: Jar[jar:file:///private/var/mobile/Containers/Data/Application/072D04EF-7FCE-4B0B-AF15-347F02E90DA7/Documents/Data/Application/0E7BECA2-763C-4E70-9D1D-A3377CEA8800/Documents/instances/default/libraries/com/mojang/jtracy/1.0.37/jtracy-1.0.37-natives-windows.jar!/]
+java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at net.kdt.pojavlaunch.Tools.launchMinecraft(Tools.java:108)
+	at net.kdt.pojavlaunch.PojavLauncher.launchMinecraft(PojavLauncher.java:255)
+	at net.kdt.pojavlaunch.PojavLauncher.main(PojavLauncher.java:53)
+Caused by: java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraftforge.bootstrap.Bootstrap.bootstrapMain(Bootstrap.java:133)
+	at net.minecraftforge.bootstrap.Bootstrap.start(Bootstrap.java:53)
+	at net.minecraftforge.bootstrap.ForgeBootstrap.main(ForgeBootstrap.java:19)
+	... 5 more
+Caused by: java.lang.module.ResolutionException: Module lwjgl contains package com.apple.ios.audio, module launcher exports package com.apple.ios.audio to lwjgl
+	at java.base/java.lang.module.Resolver.resolveFail(Unknown Source)
+	at java.base/java.lang.module.Resolver.failTwoSuppliers(Unknown Source)
+	at java.base/java.lang.module.Resolver.checkExportSuppliers(Unknown Source)
+	at java.base/java.lang.module.Resolver.finish(Unknown Source)
+	at java.base/java.lang.module.Configuration.<init>(Unknown Source)
+	at java.base/java.lang.module.Configuration.resolveAndBind(Unknown Source)
+	at java.base/java.lang.module.Configuration.resolveAndBind(Unknown Source)
+	at net.minecraftforge.bootstrap@2.1.7/net.minecraftforge.bootstrap.Bootstrap.moduleMain(Bootstrap.java:166)
+	... 10 more
+exit(1) called

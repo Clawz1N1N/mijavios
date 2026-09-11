@@ -23,3 +23,10 @@
 
 ## Scratch files
 All translation intermediates (ukz_/uko_/ukuo_/ukout_/ukd_/PROMPT_*/etc.) merged and deleted.
+
+## 2026-09-11 Session 2 (forge fixes + CI green)
+- Point 1 (stale forge re-download): extractAllMavenEntries + downloadMissingLibraries now size-aware skip (zero-byte/truncated -> re-fetch). Commit ce7ee357.
+- Point 2 (method-1 OOM ~80% install crash): per-iteration @autoreleasepool in both install loops -> autoreleased NSData drained per entry, jetsam threshold no longer hit. Commit 26108fb7.
+- CI was RED from 3477e8dc mangle wave: glued __weak/__strong typeof (ModLoaderInstallViewController, 3b5e5788) + invalid @localize prefixes (LauncherPreferencesViewController, 2da16d28).
+- CI GREEN @ 2da16d2. Pushed to clawz1NIN/mijavios main.
+- Remaining: ru batches 16-18, points 4-7 audit.
