@@ -1,4 +1,4 @@
-﻿#import <Foundation/Foundation.h>
+#import <Foundation/Foundation.h>
 
 #import "DBNumberedSlider.h"
 #import "HostManagerBridge.h"
@@ -1185,14 +1185,14 @@
               @"icon": @"hand.raised.fill",
               @"type": self.typePickField,
               @"pickKeys": @[
-                  @localize(@"ai.pref.safety.readonly", nil),
-                  @localize(@"ai.pref.safety.ask", nil),
-                  @localize(@"ai.pref.safety.yolo", nil)
+                  localize(@"ai.pref.safety.readonly", nil),
+                  localize(@"ai.pref.safety.ask", nil),
+                  localize(@"ai.pref.safety.yolo", nil)
               ],
               @"pickList": @[
-                  @localize(@"ai.pref.safety.readonly", nil),
-                  @localize(@"ai.pref.safety.ask", nil),
-                  @localize(@"ai.pref.safety.yolo", nil)
+                  localize(@"ai.pref.safety.readonly", nil),
+                  localize(@"ai.pref.safety.ask", nil),
+                  localize(@"ai.pref.safety.yolo", nil)
               ]
             },
             @{@"key": @"markdown_enabled",
