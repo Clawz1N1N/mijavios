@@ -92,6 +92,29 @@ public final class Tools {
 
         System.out.println("Args init finished. Now starting game");
 
+        // Pre-launch verify gate: fail fast with clear message before JVM dies with NoClassDefFoundError
+        {
+            java.util.List<String> missingCritical = new java.util.ArrayList<>();
+            for (String s : launchClassPath.split(":")) {
+                if (s.isEmpty()) continue;
+                File f = new File(s);
+                String n = s.toLowerCase();
+                boolean critical = n.contains("modlauncher") || n.contains("bootstraplauncher")
+                        || n.contains("mixin") || n.contains("asm") || n.contains("neoforge")
+                        || n.contains("forge") || n.contains("minecraft");
+                if (critical && (!f.isFile() || f.length() == 0)) {
+                    missingCritical.add(s);
+                }
+            }
+            if (!missingCritical.isEmpty()) {
+                throw new IllegalArgumentException("Pre-launch verify: critical libraries missing/empty: "
+                        + String.join(", ", missingCritical)
+                        + " - reinstall the mod loader to re-fetch them");
+            }
+        }
+
+
+
         PojavClassLoader loader = (PojavClassLoader) ClassLoader.getSystemClassLoader();
         // add launcher.jar itself
         for (String s : System.getProperty("java.class.path").split(":")) {
