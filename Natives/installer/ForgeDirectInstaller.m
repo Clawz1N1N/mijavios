@@ -786,10 +786,13 @@ NSString *const ForgeDirectInstallerErrorDomain = @"ForgeDirectInstallerErrorDom
 
         NSString *destPath = [librariesDir stringByAppendingPathComponent:relativePath];
         // 已存在的文件跳过，避免重复解压（重复安装场景）
-        if ([fm fileExistsAtPath:destPath]) {
+        // 0 字节文件（上次安装中断）视为损坏，重新提取
+        unsigned long long existingSize = [[fm attributesOfItemAtPath:destPath error:nil] fileSize];
+        if (existingSize > 0) {
             count++;
             continue;
         }
+        NSLog(@"[ForgeDirect] extractAllMavenEntries: stale/empty %@, re-extracting", relativePath);
 
         // 直接用已打开的 archive 实例提取，避免每个文件都重新打开 zip（性能优化）
         NSError *extractError = nil;
@@ -871,12 +874,18 @@ NSString *const ForgeDirectInstallerErrorDomain = @"ForgeDirectInstallerErrorDom
 
         NSString *destPath = [librariesDir stringByAppendingPathComponent:relativePath];
 
-        // 已存在则跳过
-        if ([fm fileExistsAtPath:destPath]) {
+        // 已存在且大小匹配则跳过；0 字节或大小不符（上次下载中断/截断）视为损坏，重新下载
+        unsigned long long expectedSize = 0;
+        id sizeObj = library[@"downloads"][@"artifact"][@"size"];
+        if ([sizeObj isKindOfClass:[NSNumber class]]) expectedSize = [sizeObj unsignedLongLongValue];
+
+        unsigned long long actualSize = [[fm attributesOfItemAtPath:destPath error:nil] fileSize];
+        if (actualSize > 0 && (expectedSize == 0 || actualSize == expectedSize)) {
             skipped++;
             processed++;
             continue;
         }
+        NSLog(@"[ForgeDirect] Library %@ stale/corrupt (actual=%llu expected=%llu), re-downloading", name, actualSize, expectedSize);
 
         // 拼 URL
         NSString *url = nil;

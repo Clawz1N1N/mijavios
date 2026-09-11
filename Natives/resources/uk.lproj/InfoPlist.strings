@@ -1,3 +1,4 @@
-﻿/* Localized versions of Info.plist keys */
-"Amethyst uses the local network to find and communicate with AltServer and LAN servers." = "Amethyst uses the local network to find and communicate with AltServer and LAN servers.";
-"Amethyst uses the microphone to enable support for voice chat mods." = "Amethyst uses the microphone to enable support for voice chat mods.";
+/* Localized versions of Info.plist keys */
+"Amethyst uses the local network to find and communicate with AltServer and LAN servers." = "Amethyst використовує локальну мережу, щоб знаходити та обмінюватися даними з серверами AltServer у локальній мережі.";
+"Amethyst uses the microphone to enable support for voice chat mods." = "Amethyst використовує мікрофон, щоб уможливити підтримку модів голосового чату.";
+
