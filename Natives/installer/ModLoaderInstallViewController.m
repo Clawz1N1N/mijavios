@@ -1,4 +1,4 @@
-﻿#import "utils.h"
+#import "utils.h"
 //
 //  ModLoaderInstallViewController.m
 //  Amethyst
@@ -501,7 +501,7 @@
     NSArray<NSURL *> *candidates = [PLMirrorCenter candidateURLsForOriginalURL:origURL resourceType:PLMirrorResourceTypeModLoader];
     if (candidates.count == 0) candidates = @[origURL];
 
-    __weaktypeof(self)weakSelf = self;
+    __weak typeof(self) weakSelf = self;
     __block NSError *lastError = nil;
     __block NSMutableData *accum = nil;
     //顺序尝试每个候选源，任一成功即完成；全部失败才报错
@@ -509,7 +509,7 @@
     tryNext = ^(NSUInteger idx) {
         if (idx >= candidates.count) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                __strongtypeof(weakSelf)strongSelf = weakSelf;
+                __strong typeof(weakSelf) strongSelf = weakSelf;
                 if (!strongSelf) return;
                 [strongSelf finishLoadingWithVersions:@[] error:lastError ?: [NSError errorWithDomain:@"ModLoaderInstall" code:-1 userInfo:@{NSLocalizedDescriptionKey:@"all sources failed"}]];
             });
@@ -520,7 +520,7 @@
         req.timeoutInterval = 15.0;
         [req setValue:@"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15" forHTTPHeaderField:@"User-Agent"];
         NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:req completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-            __strongtypeof(weakSelf)strongSelf = weakSelf;
+            __strong typeof(weakSelf) strongSelf = weakSelf;
             if (!strongSelf) return;
             if (error || !data) {
                 if (error && error.code == NSURLErrorCancelled) return;
@@ -545,7 +545,7 @@
                 [strongSelf finishLoadingWithVersions:list error:nil];
             });
         }];
-        if (idx == 0) { __strongtypeof(weakSelf)strongSelf0 = weakSelf; if (strongSelf0) strongSelf0->_currentTask = task; }
+        if (idx == 0) { __strong typeof(weakSelf) strongSelf0 = weakSelf; if (strongSelf0) strongSelf0->_currentTask = task; }
         [task resume];
     };
     tryNext(0);
