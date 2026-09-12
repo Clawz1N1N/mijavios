@@ -1,0 +1,3 @@
+/* Localized versions of Info.plist keys */
+"Amethyst uses local network find communicate AltServer LAN servers." = "Amethyst использует локальную сеть для поиска и связи с LAN-серверами AltServer.";
+"Amethyst uses microphone enable support voice chat mods." = "Amethyst использует микрофон для поддержки голосового чата в модах.";
