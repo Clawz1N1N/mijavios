@@ -30,3 +30,9 @@ All translation intermediates (ukz_/uko_/ukuo_/ukout_/ukd_/PROMPT_*/etc.) merged
 - CI was RED from 3477e8dc mangle wave: glued __weak/__strong typeof (ModLoaderInstallViewController, 3b5e5788) + invalid @localize prefixes (LauncherPreferencesViewController, 2da16d28).
 - CI GREEN @ 2da16d2. Pushed to clawz1NIN/mijavios main.
 - Remaining: ru batches 16-18, points 4-7 audit.
+
+## 2026-09-11 Session 2.5 (new GitHub home)
+- Repo moved: clawz1NIN/mijavios (account gone) -> Clawz1N1N/mijavios
+- Full history pushed; remote tip e6ab74a8 = local HEAD.
+- CI GREEN @ e6ab74a (pre-launch verify gate + all prior fixes included).
+- Remote 'mijavios' now points to https://github.com/Clawz1N1N/mijavios.git
